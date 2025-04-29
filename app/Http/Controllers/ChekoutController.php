@@ -161,11 +161,13 @@ class ChekoutController extends Controller
                 $item->delete();
             }
 
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Pesanan berhasil dibuat!',
-                'redirect' => route('shop.index', $order->id)
-            ]);
+            // return response()->json([
+            //     'status' => 'success',
+            //     'message' => 'Pesanan berhasil dibuat!',
+            //     'redirect' => route('shop.index')
+            // ]);
+            
+            return view('welcome');
 
         } catch (\Exception $e) {
             \Log::error('Order creation error: ' . $e->getMessage());
